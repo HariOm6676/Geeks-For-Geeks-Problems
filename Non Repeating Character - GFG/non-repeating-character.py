@@ -11,13 +11,9 @@ class Solution:
                 d[i]+=1
             else:
                 d[i]=1
-        s1=set()
-        for i in d:
-            if d[i]==1:
-                s1.add(i)
-        # print(s)
+        # s1=set()
         for i in s:
-            if i in s1:
+            if d[i]==1:
                 return i
         return '$'
             
