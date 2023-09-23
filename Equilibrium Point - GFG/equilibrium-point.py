@@ -6,25 +6,27 @@ class Solution:
     #Function to find equilibrium point in the array.
     def equilibriumPoint(self,A, N):
         # Your code here
-        s1=0
-        s2=0
+        if N==1:
+            return 1
         i=0
-        j=len(A)-1
-        # if(j%2!=0):
-        #     return -1
-        while(i<j):
-            if(s1<s2):
-                s1+=A[i]
+        j=N-1
+        ls=0
+        rs=0
+        while i<=j:
+            if ls<rs:
+                ls+=A[i]
                 i+=1
             else:
-                s2+=A[j]
-                j-=1
-            # print(s1,s2)
-        if(s1==s2):
-            return i+1
-        else:
-            return -1
-        # Your code here
+                rs+=A[j]
+                j-=1    
+                
+            
+            
+            
+            # print(ls,i,rs,j)
+            if ls==rs and j==i:
+                return i+1
+        return -1
 
 
 
